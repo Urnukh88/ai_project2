@@ -4,7 +4,6 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  // url      = env("PRISMA_DATABASE_URL")
 }
 
 model User {
@@ -53,8 +52,6 @@ model UserScore {
   quiz      Quiz     @relation(fields: [quizId], references: [id])
   user      User     @relation(fields: [userId], references: [id])
 }
-
-
 
 model QuizAttempt {
   id        String   @id @default(cuid())
